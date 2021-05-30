@@ -2,16 +2,23 @@ import React from 'react';
 import Body from "./components/Body";
 import Header from "./components/Header";
 import Container from "./components/Container"
+import { BasicTable } from "./components/BasicTable"
 
 
 function App() {
   return (
     <div>
+      
       <Header />
-      <Container>
+      <BasicTable />
+
+
+      {<Header />
+      /* <Container>
+
         <Body />
       </Container>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
