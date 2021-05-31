@@ -1,24 +1,14 @@
 import React from 'react';
-import Body from "./components/Body";
 import Header from "./components/Header";
-import Container from "./components/Container"
-import { BasicTable } from "./components/BasicTable"
-
+import Footer from "./components/Footer"
+import { SortingTable } from "./components/SortingTable"
 
 function App() {
   return (
     <div>
-      
       <Header />
-      <BasicTable />
-
-
-      {<Header />
-      /* <Container>
-
-        <Body />
-      </Container>
-      <Footer /> */}
+      <SortingTable />
+      <Footer />
     </div>
   );
 }
