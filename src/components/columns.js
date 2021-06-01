@@ -1,11 +1,5 @@
 export const COLUMNS = [
     {
-        Header: "Id",
-        Footer: "Id",
-        accessor: "id",
-
-    },
-    {
         Header: "First Name",
         Footer: "First Name",
         accessor: 'first_name'
@@ -21,9 +15,9 @@ export const COLUMNS = [
         accessor: "date_of_birth"
     },
     {
-        Header: "Country",
-        Footer: "Country",
-        accessor: "country"
+        Header: "Email",
+        Footer: "Email",
+        accessor: "email"
     },
     {
         Header: "Phone",
@@ -34,25 +28,19 @@ export const COLUMNS = [
 
 export const GROUPED_COLUMNS = [
     {
-        Header: "Id",
-        Footer: "Id",
-        accessor: "id",
-
-    },
-    {
         Header: "Name",
         Footer: "Name",
         columns: [
             {
                 Header: "First Name",
                 Footer: "First Name",
-                accessor: 'first_name'
+                accessor: 'name.first'
             },
             {
                 Header: "Last Name",
                 Footer: "Last Name",
-                accessor: "last_name"
-            }
+                accessor: "name.last"
+            },
         ]
     },
     {
@@ -62,18 +50,18 @@ export const GROUPED_COLUMNS = [
             {
                 Header: "Date of Birth",
                 Footer: "Date of Birth",
-                accessor: "date_of_birth"
+                accessor: "dob"
             },
             {
                 Header: "Country",
                 Footer: "Country",
-                accessor: "country"
+                accessor: "location.country"
             },
             {
                 Header: "Phone",
                 Footer: "Phone",
                 accessor: "phone"
-            }
+            },
         ]
     }
 ]

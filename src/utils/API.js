@@ -1,9 +1,11 @@
 import axios from "axios";
+import React, {useEffect, useState} from "react"
 
-// Export an object containing methods we'll use for accessing the Dog.Ceo API
+
 
 export default {
-  getRandomUser: function() {
-    return axios.get("https://randomuser.me/api/?results=25");
-  }
+  getData: function() {
+    return  axios.get("https://randomuser.me/api/?results=200")
+    }
 };
+
