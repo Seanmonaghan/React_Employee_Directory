@@ -50,7 +50,7 @@ export const FilteringTable = (props) => {
                                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                                     {column.render("Header")}
                                     <span>
-                                        { column.isSorted ? ( column.isSortedDesc ? " ⬇️" : " ⬆️") : "" }
+                                        { column.isSorted ? ( column.isSortedDesc ? <img src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-down-01-512.png" alt="desc" /> : <img src="https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-up-01-512.png" alt="asc" />) : "" }
                                     </span>
                                 </th>
                             ))}
@@ -73,7 +73,7 @@ export const FilteringTable = (props) => {
                     })}
             </tbody>
         </table>
-        <div>
+        <div className="pagination">
             <span>
                 Page{' '}
                 <strong>
@@ -81,11 +81,11 @@ export const FilteringTable = (props) => {
                 </strong>{' '}
             </span>
             <span>
-                | Go To Page: {' '}
+                | Go To Page: {' '} 
                 <input type="number" defaultValue = {pageIndex + 1} onChange = {e => {
                     const pageNumber = e.target.value ? Number(e.target.value) -1 : 0
                     gotoPage(pageNumber)
-                }}
+                }} 
                 style = {{ width: '50px'}}/>
             </span>
             <select value = {pageSize} onChange = {e => setPageSize(Number(e.target.value))}>
@@ -97,10 +97,11 @@ export const FilteringTable = (props) => {
                     ))
                 }
             </select>
-            <button onClick = {() => gotoPage(0)} disabled ={!canPreviousPage}>{'<<'}</button>
-            <button onClick = {() => previousPage()} disabled = {!canPreviousPage}>Previous</button>
-            <button onClick = {() => nextPage()} disabled = {!canNextPage}>Next</button>
-            <button onClick = {() => gotoPage(pageCount - 1)} disabled ={!canNextPage}>{'>>'}</button>
+
+            <button className = "btn btn-outline-secondary" onClick = {() => gotoPage(0)} disabled ={!canPreviousPage}>{'<<'}</button>
+            <button className = "btn btn-outline-secondary" onClick = {() => previousPage()} disabled = {!canPreviousPage}>Previous</button>
+            <button className = "btn btn-outline-secondary" onClick = {() => nextPage()} disabled = {!canNextPage}>Next</button>
+            <button className = "btn btn-outline-secondary" onClick = {() => gotoPage(pageCount - 1)} disabled ={!canNextPage}>{'>>'}</button>
         </div>
         </>
     )
