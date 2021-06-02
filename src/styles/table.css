@@ -4,7 +4,7 @@ table {
     width: 90%;
     text-align: center;
     margin: auto;
-
+    
   }
   
   table td, table th {
@@ -20,6 +20,6 @@ table {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #04AA6D;
+    background-color: #530827;
     color: white;
   }
