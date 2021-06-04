@@ -4,7 +4,7 @@ import { GROUPED_COLUMNS } from "./columns"
 import "../styles/table.css"
 import {GlobalFilter} from "./GlobalFilter"
 
-
+// set up a component for the table that will take in and display the employee information
 export const FilteringTable = (props) => {
     const columns = useMemo(() => GROUPED_COLUMNS, [])
     const data = props.data
@@ -17,6 +17,7 @@ export const FilteringTable = (props) => {
     useSortBy,
     usePagination)
 
+    // destructure table instance to get the required components
     const { 
         getTableProps,
         setPageSize,
@@ -38,6 +39,7 @@ export const FilteringTable = (props) => {
     const { globalFilter, pageSize, pageIndex } = state
 
 
+    // Sets up the table JSX that will be displayed on the site, including a search filter functionality
     return (
         <>
         <GlobalFilter filter = {globalFilter} setFilter = {setGlobalFilter} />
@@ -73,20 +75,14 @@ export const FilteringTable = (props) => {
                     })}
             </tbody>
         </table>
+        {/* Sets up the pagination feature for the table */}
         <div className="pagination">
+            <div className ="page">
             <span>
                 Page{' '}
                 <strong>
                     {pageIndex + 1} of {pageOptions.length}
                 </strong>{' '}
-            </span>
-            <span>
-                | Go To Page: {' '} 
-                <input type="number" defaultValue = {pageIndex + 1} onChange = {e => {
-                    const pageNumber = e.target.value ? Number(e.target.value) -1 : 0
-                    gotoPage(pageNumber)
-                }} 
-                style = {{ width: '50px'}}/>
             </span>
             <select value = {pageSize} onChange = {e => setPageSize(Number(e.target.value))}>
                 {
@@ -97,11 +93,22 @@ export const FilteringTable = (props) => {
                     ))
                 }
             </select>
-
+            <span>
+                {' '}Go To Page: {' '} 
+                <input type="number" defaultValue = {pageIndex + 1} onChange = {e => {
+                    const pageNumber = e.target.value ? Number(e.target.value) -1 : 0
+                    gotoPage(pageNumber)
+                }} 
+                style = {{ width: '50px'}}/>
+            </span>
+            
+            </div>
+            <div className = "nextPrevious">
             <button className = "btn btn-outline-secondary" onClick = {() => gotoPage(0)} disabled ={!canPreviousPage}>{'<<'}</button>
             <button className = "btn btn-outline-secondary" onClick = {() => previousPage()} disabled = {!canPreviousPage}>Previous</button>
             <button className = "btn btn-outline-secondary" onClick = {() => nextPage()} disabled = {!canNextPage}>Next</button>
             <button className = "btn btn-outline-secondary" onClick = {() => gotoPage(pageCount - 1)} disabled ={!canNextPage}>{'>>'}</button>
+        </div>
         </div>
         </>
     )

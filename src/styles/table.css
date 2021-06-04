@@ -1,94 +1,62 @@
-html {
-  font:1.2em normal Arial,sans-serif;
-  color:#34495E;
-  background-color: rgb(187, 215, 228);
-}
-
-h1{
-  text-align:center;
-  text-transform:uppercase;
-  letter-spacing:-2px;
-  font-size:2.5em;
-  margin:20px 0;
-}
-
-select { 
-  text-align-last:center; 
-}
-
-.container{
-  width:90%;
-  margin:auto;
-}
-
-table{
-  width:75%;
+table {
+  border-collapse: separate;
   margin: auto;
-  border: 1px solid black;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  width: 75%;
+  color: white;
+  text-align: center;
+  border:solid black 1px;
+  border-radius: 25px;
+  border-width: 0.25px;
+  font-family: 'Carrois Gothic SC', sans-serif;
 }
 
-.blue{
-  border:2px solid #1ABC9C;
-}
-
-.blue thead{
-  background:#1ABC9C;
-}
-
-.purple{
-  border:2px solid #9B59B6;
-}
-
-.purple thead{
-  background:#9B59B6;
-}
-
-thead{
-  color:black;
+table thead tr {
+  background-color: white;
+  color: black;
   text-align: center;
 }
 
-th,td{
-  text-align:center;
-  padding:5px 0;
-  border: 1px solid black;
+table th, table td {
+  padding: 12px 15px;
 }
 
-tbody tr:nth-child(even){
-  background:#ECF0F1;
+table tbody tr {
+  border-bottom: 1px solid #dddddd;
 }
 
-tbody tr:hover{
-background:#BDC3C7;
-  color:#FFFFFF;
+table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+  color: black;
 }
 
-.fixed{
-  top:0;
-  position:fixed;
-  width:auto;
-  display:none;
-  border: 1px solid black;
+table tbody tr:last-of-type {
+  border-bottom: 2px solid white;
 }
 
-.scrollMore{
-  margin-top:600px;
-}
-
-.up{
-  cursor:pointer;
-}
-
-.pagination {
-  justify-content: center;
-  text-align: center;
-  margin: 2rem;
-  align-items: stretch;
-  flex-direction: column;
-  width: 40%;
-  margin: auto;
+table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
 }
 
 img {
   width: 1.5rem;
+}
+
+.pagination {
+  font-family: 'Carrois Gothic SC', sans-serif;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+  padding: 0.5rem;
+  color: white;
+}
+
+.page {
+  padding: 0.5rem;
 }
