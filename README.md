@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Player Bank
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Description](#description) 
 
-## Available Scripts
+[Installation Instructions](#installation-instructions) 
 
-In the project directory, you can run:
+[Site Overview](#site-overview) 
+  
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-### `npm start`
+[Contribution Guidelines](#contribution-guidelines) 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Tests](#tests) 
+ 
+[Questions](#questions)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# Description
 
-### `npm test`
+This is an employee directory application created using React and hosted on Github pages.  The application was created using the React.js framework and the user information was imported via a axios API call to the [Random User API](https://randomuser.me/).  The information is tabled using the React-Table package via Node.js which allows the user to access pagination, sort through the user data or filter by columns.  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Installation Instructions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://seanmonaghan.github.io/React_Employee_Directory/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+No need to install this application, it is live via github pages and the link posted above.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Site Overview
 
-### `npm run eject`
+![screenshot of home page](public/images/homepage.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This site functions as a fairly simple employee directory so that a company can better track their employees.  The application allows the user to search for an employee by their first name, last name, date of birth, email or phone number.  They can also organize the table by clicking on one of the headers to sort by ascending or descending order.  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![pagination](public/images/pagination.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![pagination code](public/images/paginationcode.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The pagination functionality is created using a table and React-Table to filter the data presented based on the users preferences.  The user can either choose to display 10,25 or 50 individuals on the table using the setPageSize() functionality from React-Table.  They can navigate through these pages using the nextPage(), previousPage(), or gotoPage() functions from React-Table.
 
-## Learn More
+![columns](public/images/columns.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The columns are established prior to the construction of the table and must be speciied to our table component along with the data.  When creating the columns, it is important to add a Header and an accessor so that the table can determine what the header of the table should read as, and what data it is referencing from either your database or api call.  I added footer in this example to show that there are other options you could pass into the columns in case you or your client would like it styled differently.  You also only need to make a column for the data pertinent to your particular table.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![global filter](public/images/globalfilter.png)
 
-### Code Splitting
+Another important note about the project is creating the global filter component.  In essence it's just a search input that calls the setFilter function on change so that as you input characters into the search bar it will filter the results for you.  Just be sure to export the global filter and import it on your table.js file so that you can include it in the creation of your table component.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![overalltable](public/images/table.png)
 
-### Analyzing the Bundle Size
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-### Making a Progressive Web App
+This application uses the MIT license.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contribution Guidelines
 
-### Advanced Configuration
+If you would like to contribute to this project feel free to send requests.  I only wish that you be respectful to other contributes and to the code itself and maintain good clean coding practices. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Questions
 
-### Deployment
+If you have any questions about the application, be sure to contact me at my [e-mail](mailto:smonagha@conncoll.edu).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Alternatively you can find me and my other works at my [Github account](https://github.com/seanmonaghan).
